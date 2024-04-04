@@ -4,21 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74e9790e-a202-48bf-9233-8dbdbbe4a101" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/club/.gitignore" afterDir="false" />
+    <list default="true" id="74e9790e-a202-48bf-9233-8dbdbbe4a101" name="Changes" comment="models">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/club/club/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/club/club/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/club/club/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/club/club/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2ebUi7fKwa0SevO8mxCVDslRElZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,6 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
@@ -56,11 +70,48 @@
       <option name="project" value="LOCAL" />
       <updated>1712173358688</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="default 0.1">
+      <option name="closed" value="true" />
+      <created>1712173769104</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712173769104</updated>
+    </task>
+    <task id="LOCAL-00003" summary="models added">
+      <option name="closed" value="true" />
+      <created>1712193196741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712193196741</updated>
+    </task>
+    <task id="LOCAL-00004" summary="CRUD added&#10;API created&#10;templates created&#10;&#10;debug test tool added">
+      <option name="closed" value="true" />
+      <created>1712219947049</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712219947049</updated>
+    </task>
+    <task id="LOCAL-00005" summary="before swagger&#10;work ver v1.0">
+      <option name="closed" value="true" />
+      <created>1712220919664</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712220919664</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="default" />
-    <option name="LAST_COMMIT_MESSAGE" value="default" />
+    <MESSAGE value="default 0.1" />
+    <MESSAGE value="models added" />
+    <MESSAGE value="CRUD added&#10;API created&#10;templates created&#10;&#10;debug test tool added" />
+    <MESSAGE value="models" />
+    <MESSAGE value="before swagger&#10;work ver v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="before swagger&#10;work ver v1.0" />
   </component>
 </project>
