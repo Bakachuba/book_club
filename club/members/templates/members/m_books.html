@@ -1,0 +1,34 @@
+{% extends 'members/base.html' %}
+
+{% block title %} Your Book List {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <br><h2>Your Book List</h2><br>
+            <ul class="list-group">
+                {% for book in user_books %}
+                <li class="list-group-item">
+                    {{ book.title }} by {{ book.author }} <br>
+                    Published: {{ book.published_date }} <br>
+                    <form action="{% url 'my_books' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="book_id" value="{{ book.id }}">
+                        <button type="submit" class="btn btn-primary">Remove from Your List</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="text-center">
+    <a href="{% url 'all_books' %}" class="btn btn-success">All Books</a>
+</div>
+<br><br>
+<div class="text-center">
+    <a href="{% url 'create_book' %}" class="btn btn-success">Create book</a>
+</div>
+{% endblock %}

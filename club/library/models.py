@@ -9,8 +9,11 @@ class Book(models.Model):
     published_date = models.DateField()
     book_available = models.BooleanField(default=True)
 
-    members_books = models.ForeignKey(MemberCard, on_delete=models.CASCADE, related_name='book_set')
-    was_read = models.ManyToManyField(MemberCard, related_name='read_books')
+    members_books = models.ForeignKey(
+        MemberCard, on_delete=models.SET_NULL,
+        related_name='book_set', blank=True, null=True)
+    was_read = models.ManyToManyField(
+        MemberCard, related_name='read_books', blank=True)
 
     def __str__(self):
         return self.title

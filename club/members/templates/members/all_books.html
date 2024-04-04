@@ -1,0 +1,36 @@
+{% extends 'members/base.html' %}
+
+{% block title %}All books{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <br><h2>All Books</h2><br>
+            <ul class="list-group">
+                {% for book in books %}
+                <li class="list-group-item mb-3">
+                    {{ book.title }} by {{ book.author }} <br>
+                    Published: {{ book.published_date }} <br>
+                    Available: {% if book.book_available %}Yes{% else %}No{% endif %}
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'add_to_list' book.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary mt-2">Add to Your List</button>
+                    </form>
+                    <form action="{% url 'delete_book' book.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger mt-2">Delete</button>
+                    </form>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+<div class="text-center mt-3">
+    <a href="{% url 'my_books' %}" class="btn btn-success">My List</a>
+</div>
+{% endblock %}
