@@ -6,13 +6,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <br><h2>All Books</h2><br>
+            <br>
+            <h2>All Books</h2><br>
             <ul class="list-group">
                 {% for book in books %}
                 <li class="list-group-item mb-3">
                     {{ book.title }} by {{ book.author }} <br>
                     Published: {{ book.published_date }} <br>
-                    Available: {% if book.book_available %}Yes{% else %}No{% endif %}
+                    Available: {% if book.book_available %}Yes{% else %}No{% endif %}<br>
+                    Likes: {{ book.likes.count }} <br>
                     {% if user.is_authenticated %}
                     <br><br>
                     <form action="{% url 'add_to_list' book.id %}" method="post" style="display: inline;">
@@ -22,6 +24,10 @@
                     <form action="{% url 'delete_book' book.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger mt-2">Delete</button>
+                    </form><br>
+                    <form action="{% url 'like_book' book.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary mt-2">Like</button>
                     </form>
                     {% endif %}
                 </li>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     'drf_yasg',
+    'channels',
 
     'members',
     'library',
@@ -76,6 +77,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'club.wsgi.application'
 

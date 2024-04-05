@@ -16,6 +16,17 @@ def all_books(request):
                   {'books': books})
 
 
+@login_required
+def like_book(request, book_id):
+    if request.method == 'POST':
+        book = Book.objects.get(pk=book_id)
+        book.likes.add(request.user.membercard)  # Add the user's MemberCard to the likes
+
+        books = Book.objects.all().order_by('-id')
+        return render(request, 'members/all_books.html', {'books': books})
+
+    return redirect('all_books')
+
 # Создание книги
 @login_required
 def create_book(request):

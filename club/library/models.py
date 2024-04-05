@@ -12,7 +12,7 @@ class Book(models.Model):
     members_books = models.ForeignKey(
         MemberCard, on_delete=models.SET_NULL,
         related_name='book_set', blank=True, null=True)
-    was_read = models.ManyToManyField(
+    likes = models.ManyToManyField(
         MemberCard, related_name='read_books', blank=True)
 
     def __str__(self):
