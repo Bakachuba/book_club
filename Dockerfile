@@ -10,6 +10,8 @@ RUN pip install -r /temp/requirements.txt
 COPY . /book_club
 WORKDIR /book_club
 
+COPY staticfiles /book_club/staticfiles
+
 RUN adduser --disabled-password book-user
 USER book-user
 
