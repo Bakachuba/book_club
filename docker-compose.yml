@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: daphne -b 0.0.0.0 -p 8000 club.asgi:application --static /static/=/book_club/static/
+    command: daphne -b 0.0.0.0 -p 8000 club.asgi:application
     ports:
       - "8000:8000"
     volumes:
