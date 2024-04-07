@@ -2,6 +2,7 @@
 
 {% block title %} Your Book List {% endblock %}
 
+
 {% block css_style %}
 <style>
     .fa-solid {
@@ -24,24 +25,22 @@
         font-weight: bold;
     }
 </style>
-
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <br><h2>Your Book List</h2><br>
+            <h2 class="mt-4 mb-3">Your Book List</h2>
             <ul class="list-group">
                 {% for book in user_books %}
                 <li class="list-group-item">
-                    {{ book.title }} by {{ book.author }} <br>
+                    <strong>{{ book.title }}</strong> by {{ book.author }} <br>
                     Published: {{ book.published_date }} <br>
-                    <br><br>
                     <form action="{% url 'my_books' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="book_id" value="{{ book.id }}">
-                        <button type="submit" class="btn btn-primary">Remove from Your List</button>
+                        <button type="submit" class="btn btn-primary mt-3">Remove from Your List</button>
                     </form>
                 </li>
                 {% endfor %}
@@ -49,13 +48,13 @@
         </div>
     </div>
 </div>
-<br><br>
-<div class="text-center">
+
+<div class="text-center mt-4">
     <a href="{% url 'all_books' %}" class="btn btn-success">All Books</a>
 </div>
-<br><br>
-<div class="text-center">
-    <a href="{% url 'create_book' %}" class="btn btn-success">Create book</a>
+
+<div class="text-center mt-4">
+    <a href="{% url 'create_book' %}" class="btn btn-success">Create Book</a>
 </div>
 
 {% block js_script %}
