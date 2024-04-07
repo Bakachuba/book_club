@@ -8,7 +8,6 @@ services:
       - "8000:8000"
     volumes:
       - ./book_club:/book_club
-      - ./staticfiles:/book_club/staticfiles
     environment:
       - DB_HOST=database
       - DB_NAME=dbname
