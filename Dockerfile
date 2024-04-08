@@ -3,21 +3,20 @@ FROM python:3.12-alpine3.18
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk add --no-cache postgresql-dev gcc python3-dev musl-dev
-
-RUN apk add --no-cache build-base libffi-dev openssl-dev
+RUN apk add --no-cache postgresql-dev gcc python3-dev musl-dev build-base libffi-dev openssl-dev
 
 COPY requirements.txt /temp/requirements.txt
-RUN pip install -r /temp/requirements.txt
+RUN pip install --no-cache-dir -r /temp/requirements.txt
 
+RUN mkdir /book_club
 WORKDIR /book_club
 
-RUN adduser -D book_club && chmod 777 /opt /run
+COPY . /book_club
 
-RUN mkdir /book_club/static && chown -R book_club:book_club /book_club && chmod 755 /book_club
+RUN mkdir -p /book_club/staticfiles
+RUN chmod 755 /book_club/staticfiles
 
-COPY --chown=book_club:book_club . .
-
+RUN adduser -D book_club
 USER book_club
 
 EXPOSE 80
