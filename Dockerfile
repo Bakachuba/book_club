@@ -13,6 +13,10 @@ WORKDIR /book_club
 RUN adduser --disabled-password book-user
 USER book-user
 
+RUN mkdir -p /vol/web/static && \
+    chown -R book_club:/book_club /vol && \
+    chmod -R 755 /vol
+
 EXPOSE 8000
 
 CMD ["daphne", "-b", "0.0.0.0", "-p", "8000", "club.asgi:application"]
