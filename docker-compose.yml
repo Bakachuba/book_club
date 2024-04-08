@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: sh -c "cd .. && python manage.py collectstatic --noinput && python manage.py migrate && daphne -b 0.0.0.0 -p 80 club.asgi:application"
+    command: sh -c "&& python manage.py collectstatic --noinput && python manage.py migrate && daphne -b 0.0.0.0 -p 80 club.asgi:application"
     ports:
       - "8000:8000"
     volumes:
