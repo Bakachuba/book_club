@@ -22,4 +22,4 @@ USER book_club
 
 EXPOSE 80
 
-CMD ["sh", "-c", "./manage.py collectstatic --noinput && ./manage.py migrate && daphne -b 0.0.0.0 -p 80 club.asgi:application"]
+CMD ["sh", "-c", "cd .. && ./manage.py collectstatic --noinput && ./manage.py migrate && daphne -b 0.0.0.0 -p 80 club.asgi:application"]
