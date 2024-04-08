@@ -10,7 +10,6 @@ RUN apk add --no-cache build-base libffi-dev openssl-dev
 COPY requirements.txt /temp/requirements.txt
 RUN pip install -r /temp/requirements.txt
 
-COPY . /book_club
 WORKDIR /book_club
 
 RUN adduser -D book_club && chmod 777 /opt /run
@@ -23,4 +22,4 @@ USER book_club
 
 EXPOSE 80
 
-CMD ["daphne", "-b", "0.0.0.0", "-p", "80", "club.asgi:application"]
+CMD ["sh", "-c", "./manage.py collectstatic --noinput && ./manage.py migrate && daphne -b 0.0.0.0 -p 80 club.asgi:application"]
