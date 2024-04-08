@@ -14,7 +14,7 @@ RUN adduser --disabled-password book-user
 USER book-user
 
 RUN mkdir -p /vol/web/static && \
-    chown -R book_club:/book_club /vol && \
+    chown -R book-user:book-user /vol && \
     chmod -R 755 /vol
 
 EXPOSE 8000
