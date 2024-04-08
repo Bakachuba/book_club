@@ -139,8 +139,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'book_club/static')
 
 print("STATIC_ROOT directory:", STATIC_ROOT)
 
-for item in os.listdir(STATIC_ROOT):
-    print(item)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
