@@ -10,8 +10,6 @@ RUN pip install -r /temp/requirements.txt
 COPY . /book_club
 WORKDIR /book_club
 
-RUN ./manage.py collectstatic --noinput
-
 RUN adduser --disabled-password book-user
 USER book-user
 
