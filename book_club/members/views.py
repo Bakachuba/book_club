@@ -3,10 +3,10 @@ from django.shortcuts import render, redirect
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
-from book_club.library.models import Book
-from book_club.members.forms import BooksForm
-from book_club.members.models import MemberCard
-from book_club.members.serializers import BooksSerializer, MemberCardSerializer
+from library.models import Book
+from members.forms import BooksForm
+from members.models import MemberCard
+from members.serializers import BooksSerializer, MemberCardSerializer
 
 
 # Вывод всех книг

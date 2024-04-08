@@ -3,7 +3,7 @@ from django.dispatch import receiver
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 
-from book_club.library.models import Book
+from library.models import Book
 
 
 @receiver(post_save, sender=Book)
