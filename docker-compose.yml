@@ -3,10 +3,10 @@ version: '3'
 services:
   web:
     build: .
-    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput  && daphne -b 0.0.0.0 -p 80 club.asgi:application"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput  && daphne -b 0.0.0.0 -p 8000 club.asgi:application"
     restart: always
     expose:
-      - "80"
+      - "8000"
     volumes:
       - ./book_club:/book_club
     environment:
