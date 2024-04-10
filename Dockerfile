@@ -11,12 +11,8 @@ RUN pip install --no-cache-dir -r /temp/requirements.txt
 COPY . /book_club
 WORKDIR /book_club
 
-RUN mkdir -p /book_club/static
-RUN chmod 755 /book_club/static
-
 RUN adduser -D book_club
 USER book_club
 
 EXPOSE 80
 
-CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput  && daphne -b 0.0.0.0 -p 80 club.asgi:application"]

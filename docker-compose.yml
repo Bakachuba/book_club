@@ -3,10 +3,13 @@ version: '3'
 services:
   web:
     build: .
-    ports:
-      - "80:80"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput  && daphne -b 0.0.0.0 -p 80 club.asgi:application"
+    restart: always
+    expose:
+      - "80"
     volumes:
       - ./book_club:/book_club
+      - /var/www/static/:/var/www/static/
     environment:
       - DB_HOST=database
       - DB_NAME=dbname
@@ -21,3 +24,15 @@ services:
       - POSTGRES_DB=dbname
       - POSTGRES_USER=dbuser
       - POSTGRES_PASSWORD=pass
+
+  nginx:
+    build: ./nginx
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - /var/www/static/:/var/www/static/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - web
