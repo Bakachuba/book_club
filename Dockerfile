@@ -14,5 +14,5 @@ WORKDIR /book_club
 RUN adduser -D book_club
 USER book_club
 
-EXPOSE 80
+EXPOSE 8000
 
